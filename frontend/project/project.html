@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mini Jira - Projects</title>
+
+    <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+
+        <h2>🚀 Mini Jira</h2>
+
+        <a href="../dashboard.html">🏠 Dashboard</a>
+        <a class="active">📁 Projects</a>
+        <a href="../task/task.html">✅ Tasks</a>
+        <a href="../kanban/kanban.html">📋 Kanban Board</a>
+        <a href="../calendar/calendar.html">📅 Calendar</a>
+        <a href="../report/report.html">📊 Reports</a>
+        <a href="../profile/profile.html">👤 Profile</a>
+
+        <button class="logout-btn" onclick="logout()">
+            ↪ Logout
+        </button>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <div>
+                <h1>Projects</h1>
+                <p>Manage and organize your projects efficiently.</p>
+            </div>
+
+            <div class="search-top">
+                🔍
+                <input type="text"
+                       placeholder="Search projects...">
+            </div>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card purple">
+                <div class="stat-icon">P</div>
+                <div>
+                     <p>Total Projects</p>
+                    <h2 id="totalProjectsCount">0</h2>
+                  
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-icon">A</div>
+                <div>
+                       <p>Active Projects</p>
+                    <h2 id="activeProjectsCount">0</h2>
+                 
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-icon">PP</div>
+                <div>
+                      <p>Planning Projects</p>
+                    <h2 id="planningProjectsCount">0</h2>
+                  
+                </div>
+            </div>
+
+            <div class="stat-card red">
+               <div class="stat-icon">C</div>
+                <div>
+                     <p>Completed Projects</p>
+                    <h2 id="completedProjectsCount">0</h2>
+                   
+                </div>
+            </div>
+
+        </div>
+
+        <button class="add-project-btn"
+                onclick="openProjectModal()">
+            + Create Project
+        </button>
+
+        <div class="table-card">
+
+            <div class="table-header">
+
+                <h2>All Projects</h2>
+
+                <select id="projectFilter"
+                        onchange="loadProjects()">
+
+                    <option value="All" selected>All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Archived">Archived</option>
+
+                </select>
+
+            </div>
+
+            <div class="search-box">
+
+                <input type="text"
+                       id="searchProject"
+                       placeholder="Search Project..."
+                       onkeyup="searchProject()">
+
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Tasks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="projectTable">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Project Popup Modal -->
+
+<div id="projectModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close"
+              onclick="closeProjectModal()">
+            &times;
+        </span>
+
+        <h2 id="modalTitle">Create New Project</h2>
+
+        <input type="hidden" id="projectId">
+
+        <label>Project Name</label>
+        <input type="text"
+               id="projectName"
+               placeholder="Enter project name">
+
+        <label>Description</label>
+        <textarea id="description"
+                  placeholder="Enter project description"></textarea>
+
+        <label>Start Date</label>
+        <input type="date"
+               id="startDate">
+
+        <label>End Date</label>
+        <input type="date"
+               id="endDate">
+
+        <label>Status</label>
+        <select id="status">
+            <option value="Active">Active</option>
+            <option value="Archived">Archived</option>
+        </select>
+
+        <button class="create-btn"
+                onclick="saveProject()">
+            Save Project
+        </button>
+
+    </div>
+
+</div>
+
+<script src="project.js"></script>
+<script src="../logout.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Jira - Kanban</title>
+    <link rel="stylesheet" href="kanban.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>🚀 Mini Jira</h2>
+
+        <a href="../dashboard.html">🏠 Dashboard</a>
+        <a href="../project/project.html">📁 Projects</a>
+        <a href="../task/task.html">✅ Tasks</a>
+        <a class="active">📋 Kanban Board</a>
+        <a href="../calendar/calendar.html">🗓 Calendar</a>
+        <a href="../report/report.html">📊 Reports</a>
+        <a href="../profile/profile.html">👤 Profile</a>
+
+        <button class="logout-btn" onclick="logout()">↪ Logout</button>
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <div>
+                <h1>Kanban Board</h1>
+                <p>Track tasks by progress and status.</p>
+            </div>
+
+            <div class="search-top">
+                🔍
+                <input type="text" id="searchKanban" placeholder="Search tasks..." onkeyup="searchKanban()">
+            </div>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card blue">
+                <div class="stat-icon">O</div>
+                <div>
+                    <h2 id="openCount">0</h2>
+                    <p>Open Tasks</p>
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-icon">P</div>
+                <div>
+                    <h2 id="progressCount">0</h2>
+                    <p>In Progress</p>
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-icon">C</div>
+                <div>
+                    <h2 id="completedCount">0</h2>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="kanban-board">
+
+            <div class="kanban-column">
+                <div class="column-header open-header">
+                    <h2>Open</h2>
+                </div>
+                <div id="openTasks"></div>
+            </div>
+
+            <div class="kanban-column">
+                <div class="column-header progress-header">
+                    <h2>In Progress</h2>
+                </div>
+                <div id="progressTasks"></div>
+            </div>
+
+            <div class="kanban-column">
+                <div class="column-header completed-header">
+                    <h2>Completed</h2>
+                </div>
+                <div id="completedTasks"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="kanban.js"></script>
+<script src="../logout.js"></script>
+
+</body>
+</html>

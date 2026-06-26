@@ -1,0 +1,316 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f7f8ff;
+    color:#0f172a;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:280px;
+    min-height:100vh;
+    background:linear-gradient(180deg,#4f46e5,#6d28d9);
+    padding:30px 18px;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.sidebar h2{
+    font-size:30px;
+    margin-bottom:35px;
+}
+
+.sidebar a{
+    display:block;
+    padding:16px 18px;
+    margin-bottom:12px;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:18px;
+}
+
+.sidebar a:hover,
+.sidebar .active{
+    background:rgba(255,255,255,0.18);
+}
+
+.logout-btn{
+    position:absolute;
+    bottom:30px;
+    left:18px;
+    right:18px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+    margin-left:280px;
+    width:calc(100% - 280px);
+    padding:30px;
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at 75% 10%, rgba(124,58,237,0.12), transparent 260px),
+        radial-gradient(circle at 90% 30%, rgba(99,102,241,0.12), transparent 300px),
+        linear-gradient(135deg,#f8fafc,#eef2ff,#faf5ff);
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.topbar p{
+    font-size:18px;
+    color:#64748b;
+}
+
+.search-top{
+    width:330px;
+    height:55px;
+    background:white;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 18px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.search-top input{
+    border:none;
+    outline:none;
+    width:100%;
+    font-size:16px;
+}
+
+/* STATS */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-bottom:28px;
+}
+
+.stat-card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.stat-icon{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:800;
+}
+
+.stat-card h2{
+    font-size:38px;
+    color:#0f172a;
+}
+
+.stat-card p{
+    font-size:17px;
+    color:#475569;
+}
+
+.blue .stat-icon{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.orange .stat-icon{
+    background:#ffedd5;
+    color:#f97316;
+}
+
+.green .stat-icon{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+/* KANBAN */
+
+.kanban-board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.kanban-column{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    min-height:520px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.column-header{
+    height:60px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.column-header h2{
+    font-size:24px;
+}
+
+.open-header{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.progress-header{
+    background:#ffedd5;
+    color:#f97316;
+}
+
+.completed-header{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+/* TASK CARD */
+
+.task-card{
+    background:#fff;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    border-left:6px solid #4f46e5;
+}
+
+.task-card h3{
+    font-size:18px;
+    margin-bottom:10px;
+    color:#0f172a;
+}
+
+.task-card p{
+    color:#475569;
+    margin-bottom:8px;
+    line-height:1.4;
+}
+
+.open-card{
+    border-left-color:#2563eb;
+}
+
+.progress-card{
+    border-left-color:#f97316;
+}
+
+.completed-card{
+    border-left-color:#16a34a;
+}
+
+/* PRIORITY */
+
+.priority{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.low{
+    background:#dcfce7;
+    color:#16a34a;
+}
+
+.medium{
+    background:#ffedd5;
+    color:#f97316;
+}
+
+.high{
+    background:#fee2e2;
+    color:#ef4444;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        min-height:auto;
+    }
+
+    .logout-btn{
+        position:relative;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        margin-top:20px;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .search-top{
+        width:100%;
+    }
+
+    .stats-grid,
+    .kanban-board{
+        grid-template-columns:1fr;
+    }
+}

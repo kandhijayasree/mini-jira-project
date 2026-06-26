@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Jira - Reports</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>🚀 Mini Jira</h2>
+
+        <a href="../dashboard.html">🏠 Dashboard</a>
+        <a href="../project/project.html">📁 Projects</a>
+        <a href="../task/task.html">✅ Tasks</a>
+        <a href="../kanban/kanban.html">📋 Kanban Board</a>
+        <a href="../calendar/calendar.html">🗓 Calendar</a>
+        <a class="active">📊 Reports</a>
+        <a href="../profile/profile.html">👤 Profile</a>
+
+        <button class="logout-btn" onclick="logout()">↪ Logout</button>
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <div>
+                <h1>Reports</h1>
+                <p>Track your project and task progress.</p>
+            </div>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card purple">
+                <div class="stat-icon">P</div>
+                <div>
+                    <h2 id="totalProjects">0</h2>
+                    <p>Total Projects</p>
+                </div>
+            </div>
+
+            <div class="stat-card blue">
+                <div class="stat-icon">T</div>
+                <div>
+                    <h2 id="totalTasks">0</h2>
+                    <p>Total Tasks</p>
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-icon">O</div>
+                <div>
+                    <h2 id="openTasks">0</h2>
+                    <p>Open Tasks</p>
+                </div>
+            </div>
+
+            <div class="stat-card red">
+                <div class="stat-icon">C</div>
+                <div>
+                    <h2 id="completedTasks">0</h2>
+                    <p>Completed Tasks</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="report-grid">
+
+            <div class="report-card">
+                <h2>Completion Rate</h2>
+
+                <div class="progress-bar">
+                    <div id="completionBar"></div>
+                </div>
+
+                <h3 id="completionText">0% Completed</h3>
+            </div>
+
+            <div class="report-card">
+                <h2>Task Summary</h2>
+
+                <div class="summary-row">
+                    <span>Open Tasks</span>
+                    <b id="summaryOpen">0</b>
+                </div>
+
+                <div class="summary-row">
+                    <span>Completed Tasks</span>
+                    <b id="summaryCompleted">0</b>
+                </div>
+
+                <div class="summary-row">
+                    <span>Overdue Tasks</span>
+                    <b id="summaryOverdue">0</b>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="report.js"></script>
+<script src="../logout.js"></script>
+
+</body>
+</html>

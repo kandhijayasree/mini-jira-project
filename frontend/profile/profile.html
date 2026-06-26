@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Jira - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+
+        <h2>🚀 Mini Jira</h2>
+
+        <a href="../dashboard.html">🏠 Dashboard</a>
+        <a href="../project/project.html">📁 Projects</a>
+        <a href="../task/task.html">✅ Tasks</a>
+        <a href="../kanban/kanban.html">📋 Kanban Board</a>
+        <a href="../calendar/calendar.html">🗓 Calendar</a>
+        <a href="../report/report.html">📊 Reports</a>
+        <a class="active">👤 Profile</a>
+
+        <button class="logout-btn" onclick="logout()">
+            ↪ Logout
+        </button>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+            <div>
+                <h1>My Profile</h1>
+                <p>Manage your account information and password.</p>
+            </div>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="avatar">
+                👤
+            </div>
+
+            <div class="profile-info">
+                <h2 id="userName">User</h2>
+                <p id="userEmail">user@gmail.com</p>
+                <span>Project Management User</span>
+
+                <div class="profile-stats">
+                    <p>Total Projects: <b id="profileProjects">0</b></p>
+                    <p>Total Tasks: <b id="profileTasks">0</b></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="form-card">
+
+                <h2>Update Profile</h2>
+
+                <label>Name</label>
+                <input type="text" id="name" placeholder="Enter name">
+
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter email">
+
+                <button onclick="updateProfile()">
+                    Update Profile
+                </button>
+
+            </div>
+
+            <div class="form-card">
+
+                <h2>Change Password</h2>
+
+                <label>Current Password</label>
+                <input type="password" id="oldPassword" placeholder="Current Password">
+
+                <label>New Password</label>
+                <input type="password" id="newPassword" placeholder="New Password">
+
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+                <button onclick="changePassword()">
+                    Change Password
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="account-card">
+
+            <h2>Account Information</h2>
+
+            <div class="account-grid">
+
+                <div>
+                    <span>User Role</span>
+                    <h3>Admin</h3>
+                </div>
+
+                <div>
+                    <span>Total Projects</span>
+                    <h3 id="accountProjects">0</h3>
+                </div>
+
+                <div>
+                    <span>Total Tasks</span>
+                    <h3 id="accountTasks">0</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="profile.js"></script>
+<script src="../logout.js"></script>
+
+</body>
+
+</html>
